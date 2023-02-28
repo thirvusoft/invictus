@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include invictus *.css
+recursive-include invictus *.csv
+recursive-include invictus *.html
+recursive-include invictus *.ico
+recursive-include invictus *.js
+recursive-include invictus *.json
+recursive-include invictus *.md
+recursive-include invictus *.png
+recursive-include invictus *.py
+recursive-include invictus *.svg
+recursive-include invictus *.txt
+recursive-exclude invictus *.pyc
