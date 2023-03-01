@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-02-28 14:27:35.066043",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "from_date",
+  "to_date",
+  "column_break_2",
+  "company",
+  "air_transport_section",
+  "air_budget",
+  "rail_transport_section",
+  "rail_budget",
+  "road_transport_section",
+  "road_budget"
+ ],
+ "fields": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "To Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "air_transport_section",
+   "fieldtype": "Section Break",
+   "label": "Air Transport"
+  },
+  {
+   "fieldname": "rail_transport_section",
+   "fieldtype": "Section Break",
+   "label": "Rail Transport"
+  },
+  {
+   "fieldname": "road_transport_section",
+   "fieldtype": "Section Break",
+   "label": "Road Transport"
+  },
+  {
+   "fieldname": "road_budget",
+   "fieldtype": "Table",
+   "label": "Allocate Budget for Road Transports",
+   "options": "CD Budget Allocation Splitup"
+  },
+  {
+   "fieldname": "air_budget",
+   "fieldtype": "Table",
+   "label": "Allocate Budget for Air Transports",
+   "options": "CD Budget Allocation Splitup"
+  },
+  {
+   "fieldname": "rail_budget",
+   "fieldtype": "Table",
+   "label": "Allocate Budget for Rail Transports",
+   "options": "CD Budget Allocation Splitup"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-01 12:29:25.463785",
+ "modified_by": "Administrator",
+ "module": "Invictus",
+ "name": "CD Budget Allocation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Super Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_views": 1
+}

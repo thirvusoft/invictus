@@ -1,0 +1,39 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-03-01 14:59:38.006832",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{\"filters\":[[\"Expense Claim\",\"company\",\"=\",\"Invictus\"]],\"fields\":[[\"name\",\"Expense Claim\"],[\"docstatus\",\"Expense Claim\"],[\"expense_type\",\"Expense Claim Detail\"],[\"employee_name\",\"Expense Claim\"],[\"amount\",\"Expense Claim Detail\"],[\"expense_approver\",\"Expense Claim\"],[\"expense_date\",\"Expense Claim Detail\"]],\"order_by\":\"`tabExpense Claim`.`modified` desc\",\"add_totals_row\":0,\"page_length\":20,\"column_widths\":{\"name\":120,\"Expense Claim Detail:expense_type\":150,\"employee_name\":150,\"Expense Claim Detail:amount\":150,\"expense_approver\":120,\"Expense Claim Detail:expense_date\":150},\"group_by\":null}",
+ "modified": "2023-03-01 15:22:02.064355",
+ "modified_by": "Administrator",
+ "module": "Invictus",
+ "name": "Expense Category wise report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Expense Claim",
+ "report_name": "Expense Category wise report",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "HR Manager"
+  },
+  {
+   "role": "Employee"
+  },
+  {
+   "role": "Expense Approver"
+  },
+  {
+   "role": "HR User"
+  },
+  {
+   "role": "Employee Self Service"
+  }
+ ]
+}
