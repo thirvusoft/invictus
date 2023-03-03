@@ -56,18 +56,21 @@
    "label": "Road Transport"
   },
   {
+   "allow_bulk_edit": 1,
    "fieldname": "road_budget",
    "fieldtype": "Table",
    "label": "Allocate Budget for Road Transports",
    "options": "CD Budget Allocation Splitup"
   },
   {
+   "allow_bulk_edit": 1,
    "fieldname": "air_budget",
    "fieldtype": "Table",
    "label": "Allocate Budget for Air Transports",
    "options": "CD Budget Allocation Splitup"
   },
   {
+   "allow_bulk_edit": 1,
    "fieldname": "rail_budget",
    "fieldtype": "Table",
    "label": "Allocate Budget for Rail Transports",
@@ -82,7 +85,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-01 12:29:25.463785",
+ "modified": "2023-03-03 17:40:24.137812",
  "modified_by": "Administrator",
  "module": "Invictus",
  "name": "CD Budget Allocation",

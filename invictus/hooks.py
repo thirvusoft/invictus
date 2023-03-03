@@ -57,8 +57,13 @@ app_license = "MIT"
 # ------------
 
 # before_install = "invictus.install.before_install"
-# after_install = "invictus.install.after_install"
+after_install = "invictus.install.after_install"
 
+
+# Migration
+#-------------
+
+after_migrate = "invictus.install.after_install"
 # Uninstallation
 # ------------
 
