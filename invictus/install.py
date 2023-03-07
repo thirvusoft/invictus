@@ -2,7 +2,7 @@ import frappe
 
 def after_install():
     create_mode_of_transports()
-
+    
 def create_mode_of_transports():
     mot = frappe.new_doc('Mode of Transport')
     if(not frappe.db.exists('Mode of Transport', 'Air')):

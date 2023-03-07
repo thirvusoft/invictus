@@ -14,7 +14,7 @@ app_license = "MIT"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/invictus/css/invictus.css"
-# app_include_js = "/assets/invictus/js/invictus.js"
+app_include_js = "/assets/invictus/js/workflow.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/invictus/css/invictus.css"
@@ -31,7 +31,7 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"Travel Request" : "/invictus/utils/js/travel_request.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -102,10 +102,10 @@ after_migrate = "invictus.install.after_install"
 
 # doc_events = {
 # 	"*": {
-# 		"on_update": "method",
+# 		"*": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
-#	}
+# 	}
 # }
 
 # Scheduled Tasks
@@ -137,9 +137,11 @@ after_migrate = "invictus.install.after_install"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "invictus.event.get_events"
-# }
+override_whitelisted_methods = {
+	"frappe.model.workflow.apply_workflow": "invictus.invictus.utils.py.workflow.apply_workflow",
+	"frappe.model.workflow.get_transitions": "invictus.invictus.utils.py.workflow.get_transitions"
+
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
