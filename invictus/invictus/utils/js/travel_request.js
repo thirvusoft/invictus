@@ -2,19 +2,19 @@ frappe.ui.form.on('Travel Request', {
     refresh: function(frm){
         if(frm.wrapper.querySelector('span[data-label=Reject]')){
             frm.rejected = false;
-            frm.wrapper.querySelector('span[data-label=Reject]').onclick=function(){
+            frm.wrapper.querySelector('span[data-label=Reject]').parentElement.onclick=function(){
                 frm.rejected  = true;
             } 
         }
         if(frm.wrapper.querySelector('span[data-label=Object]')){
             frm.objected = false;
-            frm.wrapper.querySelector('span[data-label=Object]').onclick=function(){
+            frm.wrapper.querySelector('span[data-label=Object]').parentElement.onclick=function(){
                 frm.objected  = true;
             } 
         }
         if(frm.wrapper.querySelector('span[data-label=Re-Request]')){
             frm.rerequest = false;
-            frm.wrapper.querySelector('span[data-label=Re-Request]').onclick=function(){
+            frm.wrapper.querySelector('span[data-label=Re-Request]').parentElement.onclick=function(){
                 frm.rerequest  = true;
             } 
         }
@@ -51,13 +51,50 @@ frappe.ui.form.on('Travel Request', {
                 title:'Re-Request Reason',
                 fields:[{'fieldname':'rerequest_reason', 'label':'Re-Requesting Reason', 'fieldtype':'Small Text', 'reqd':1}],
                 primary_action(data){
+                    frm.set_value('reiteration_count',frm.doc.reiteration_count+1)
                     rerequest(frm, data)
                     dialog.hide()
                 }
             })	
             dialog.show()
 		}
-	}
+	},
+    async create_advance_entry(frm){
+        let meta = await frappe.xcall("invictus.invictus.utils.py.travel_request.get_meta", {doc:'Employee Advance'}) 
+		let fields = meta.fields;
+
+		// prepare a list of mandatory, bold and allow in quick entry fields
+		let mandatory = fields.filter(df => {
+			return ((df.allow_in_quick_entry) && !df.read_only);
+		});
+      
+        var dialog = new frappe.ui.Dialog({
+            title :'New Employee Advance',
+            fields:mandatory,
+            primary_action_label: __('Save'),
+            primary_action: function(data){
+                data['travel_request'] = frm.docname
+				data['employee'] = frm.doc.employee
+                data['purpose'] = frm.doc.purpose_of_travel
+				data['company'] = frm.doc.company
+                frappe.xcall("invictus.invictus.utils.py.travel_request.create_employee_advance", {data:data, async:false}).then((r)=>{
+                    dialog.set_primary_action('Submit', frappe.confirm(`Permanently Submit Employee Advance ${r.name}`,
+                        function() {
+                            frm.reload_doc()
+                            frappe.xcall("invictus.invictus.utils.py.travel_request.submit_employee_advance", {emp_adv:r.name})
+                            dialog.hide();
+					    },
+                        function(){
+                            frm.reload_doc()
+                            dialog.hide();
+                        }, 
+                    ))
+					
+				})
+            }
+        })
+        dialog.show()
+    }
 })
 
 function reject(frm){

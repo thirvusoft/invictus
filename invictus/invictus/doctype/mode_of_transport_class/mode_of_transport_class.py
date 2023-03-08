@@ -4,5 +4,5 @@
 # import frappe
 from frappe.utils.nestedset import NestedSet
 
-class ModeofTransport(NestedSet):
+class ModeofTransportClass(NestedSet):
 	pass
