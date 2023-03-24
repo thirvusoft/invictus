@@ -31,3 +31,5 @@ def submit_employee_advance(emp_adv):
 	adv.flags.ignore_mandatory = True
 	adv.flags.ignore_permissions = True
 	adv.submit()
+	adv.reload()
+	adv.run_method('on_update')

@@ -100,13 +100,12 @@ after_migrate = "invictus.install.after_install"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"*": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Employee Advance": {
+		"on_update_after_submit": "invictus.invictus.utils.py.employee_advance.employee_adv_status_update",
+		"on_update": "invictus.invictus.utils.py.employee_advance.employee_adv_status_update"
+	}
+}
 
 # Scheduled Tasks
 # ---------------

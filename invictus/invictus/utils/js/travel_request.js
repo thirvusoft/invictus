@@ -67,13 +67,18 @@ frappe.ui.form.on('Travel Request', {
 		let mandatory = fields.filter(df => {
 			return ((df.allow_in_quick_entry) && !df.read_only);
 		});
-      
+      mandatory.forEach((df)=>{
+        if(df.options == 'Account'){
+            df['filters'] = {'is_group':0}
+        }
+      })
         var dialog = new frappe.ui.Dialog({
             title :'New Employee Advance',
             fields:mandatory,
             primary_action_label: __('Save'),
             primary_action: function(data){
                 data['travel_request'] = frm.docname
+                data['exchange_rate'] = 1
 				data['employee'] = frm.doc.employee
                 data['purpose'] = frm.doc.purpose_of_travel
 				data['company'] = frm.doc.company

@@ -2,7 +2,18 @@ import frappe
 from frappe.model.workflow import get_workflow, is_transition_condition_satisfied, has_approval_access
 from frappe import _
 from frappe.utils import cint
+import json
 
+class WorkflowStateError(frappe.ValidationError):
+	pass
+
+
+class WorkflowTransitionError(frappe.ValidationError):
+	pass
+
+
+class WorkflowPermissionError(frappe.ValidationError):
+	pass
 
 @frappe.whitelist ()
 def get_transitions(
@@ -30,10 +41,17 @@ def get_transitions(
 	transitions = []
 	roles = frappe.get_roles()
 
+	approver = None
+	employee = frappe.db.get_value('Employee', {'user_id':doc.owner}, 'name')
+	if(employee):
+		reports_to = frappe.db.get_value('Employee', employee, 'reports_to')
+		if(reports_to):
+			approver = frappe.db.get_value('Employee', reports_to, 'user_id')
 	for transition in workflow.transitions:
-		if transition.state == current_state and transition.user_allowed == frappe.session.user:
+		if transition.state == current_state and approver and approver == frappe.session.user:
 			if not is_transition_condition_satisfied(transition, doc):
 				continue
+			transition.user_allowed = approver
 			transitions.append(transition.as_dict())
 
 	return transitions
@@ -82,3 +100,18 @@ def apply_workflow(doc, action):
 
 	doc.add_comment("Workflow", _(next_state.state))
 	return doc
+
+@frappe.whitelist()
+def get_doc_state_approver(state, doc):
+	if isinstance(state, str):
+		state = json.loads(state)
+	if isinstance(doc, str):
+		doc = json.loads(doc)
+	approver = None
+	employee = frappe.db.get_value('Employee', {'user_id':doc.get('owner')}, 'name')
+	if(employee):
+		reports_to = frappe.db.get_value('Employee', employee, 'reports_to')
+		if(reports_to):
+			approver = frappe.db.get_value('Employee', reports_to, 'user_id')
+	state['allow_edit'] = approver
+	state['user_allowed'] = approver
