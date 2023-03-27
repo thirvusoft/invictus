@@ -31,7 +31,7 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"Travel Request" : "utils/js/travel_request.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -56,7 +56,7 @@ app_license = "MIT"
 # Installation
 # ------------
 
-# before_install = "invictus.install.before_install"
+boot_session = "invictus.utils.py.session_defaults.session_defaults"
 after_install = "invictus.install.after_install"
 
 
@@ -100,13 +100,12 @@ after_migrate = "invictus.install.after_install"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Travel Request": {
+		"on_update_after_submit": "invictus.utils.py.employee_advance.employee_advance",
+
+	}
+}
 
 # Scheduled Tasks
 # ---------------

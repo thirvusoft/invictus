@@ -85,7 +85,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-03 17:40:24.137812",
+ "modified": "2023-03-24 23:46:25.469519",
  "modified_by": "Administrator",
  "module": "Invictus",
  "name": "CD Budget Allocation",
@@ -118,6 +118,7 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "track_changes": 1,
  "track_views": 1
 }
