@@ -12,11 +12,13 @@
  ],
  "fields": [
   {
+   "allow_on_submit": 1,
    "fieldname": "advance",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Advance",
-   "options": "Employee Advance"
+   "options": "Employee Advance",
+   "read_only": 1
   },
   {
    "fetch_from": "advance.advance_amount",
@@ -26,22 +28,25 @@
    "label": "Amount"
   },
   {
+   "allow_on_submit": 1,
    "fetch_from": "advance.status",
    "fieldname": "status",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Status"
+   "label": "Status",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-03 18:32:34.115000",
+ "modified": "2023-04-21 13:17:15.463365",
  "modified_by": "Administrator",
  "module": "Invictus",
  "name": "Travel Request Advance",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "states": []
 }

@@ -31,7 +31,9 @@ app_license = "MIT"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Travel Request" : "utils/js/travel_request.js"}
+doctype_js = {"Travel Request" : "utils/js/travel_request.js",
+              "Expense Claim":"utils/js/expense_claim.js",
+              }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -56,7 +58,7 @@ doctype_js = {"Travel Request" : "utils/js/travel_request.js"}
 # Installation
 # ------------
 
-boot_session = "invictus.utils.py.session_defaults.session_defaults"
+# boot_session = "invictus.utils.py.session_defaults.session_defaults"
 after_install = "invictus.install.after_install"
 
 
@@ -103,8 +105,17 @@ after_migrate = "invictus.install.after_install"
 doc_events = {
 	"Travel Request": {
 		"on_update_after_submit": "invictus.utils.py.employee_advance.employee_advance",
-		"on_submit":"invictus.utils.py.travel_request.costing_details"
+		"after_insert":"invictus.utils.py.travel_request.costing_details",
+		"validate":"invictus.utils.py.travel_request.send_emails"
 
+	},
+ 
+ 	"Employee Advance": {
+		"on_submit":"invictus.utils.py.employee_advance.status_change"
+
+	},
+  	"Employee":{
+		"validate":"invictus.utils.py.user_permission.user_permission"
 	}
 }
 
