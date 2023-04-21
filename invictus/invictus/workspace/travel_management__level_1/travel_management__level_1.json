@@ -1,0 +1,57 @@
+{
+ "charts": [],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Travel Management -Level 1</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Travel Request\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"CD Budget Allocation\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mode of Transport\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Invictus Settings\",\"col\":3}}]",
+ "creation": "2023-04-12 09:49:21.010047",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "idx": 0,
+ "label": "Travel Management -Level 1",
+ "links": [],
+ "modified": "2023-04-12 10:07:13.449223",
+ "modified_by": "Administrator",
+ "module": "Invictus",
+ "name": "Travel Management -Level 1",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Level 1"
+  }
+ ],
+ "sequence_id": 62.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Travel Request",
+   "link_to": "Travel Request",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "CD Budget Allocation",
+   "link_to": "CD Budget Allocation",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Mode of Transport",
+   "link_to": "Mode of Transport",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Invictus Settings",
+   "link_to": "Invictus Settings",
+   "type": "DocType"
+  }
+ ],
+ "title": "Travel Management -Level 1"
+}

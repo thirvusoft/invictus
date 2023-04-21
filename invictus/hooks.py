@@ -103,6 +103,7 @@ after_migrate = "invictus.install.after_install"
 doc_events = {
 	"Travel Request": {
 		"on_update_after_submit": "invictus.utils.py.employee_advance.employee_advance",
+		"on_submit":"invictus.utils.py.travel_request.costing_details"
 
 	}
 }

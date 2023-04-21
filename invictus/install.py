@@ -18,3 +18,10 @@ def create_mode_of_transports():
             'is_group':1
         })
         mot.insert()
+    mot = frappe.new_doc('Mode of Transport')
+    if(not frappe.db.exists('Mode of Transport', 'Road')):
+        mot.update({
+            'mode_of_transport':'Road',
+            'is_group':1
+        })
+        mot.insert()
