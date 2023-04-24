@@ -15,7 +15,8 @@
   "rail_transport_section",
   "rail_budget",
   "road_transport_section",
-  "road_budget"
+  "road_budget",
+  "amended_from"
  ],
  "fields": [
   {
@@ -81,11 +82,21 @@
    "fieldtype": "Link",
    "label": "Company",
    "options": "Company"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "CD Budget Allocation",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2023-03-24 23:46:25.469519",
+ "modified": "2023-04-21 11:38:39.030711",
  "modified_by": "Administrator",
  "module": "Invictus",
  "name": "CD Budget Allocation",

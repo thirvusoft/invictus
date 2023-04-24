@@ -16,7 +16,13 @@ def employee_advance(self,event):
             frappe.db.commit()
             i.advance=new_employee_advance.name
             i.status=new_employee_advance.status
+    self.run_method = lambda arg, **kwargs: 0
+    self.save('update')
         
         
+def status_change(self,event):
+    doc=frappe.get_doc("Travel Request",self.travel_request)
+    for i in doc.travel_request_advance:
+        if i.advance==self.name:
+            frappe.db.set_value('Travel Request Advance',i.name,'status',self.status)
 
-    
