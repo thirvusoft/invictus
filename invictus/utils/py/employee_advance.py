@@ -2,7 +2,8 @@ import frappe
 
 def employee_advance(self,event):
     for i in self.travel_request_advance:
-        if i.amount:
+        if i.amount and not i.advance:
+            
             new_employee_advance = frappe.new_doc("Employee Advance")
             new_employee_advance.update({
                 "employee":self.employee,

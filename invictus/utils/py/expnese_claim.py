@@ -28,6 +28,7 @@ def make_trn(source_name, target_doc=None):
                     "total_amount":"amount",
                     "total_amount":"sanctioned_amount",
                     "creation":"expense_date",
+                    "docname":"travel_request_id"
                     
                 },
 

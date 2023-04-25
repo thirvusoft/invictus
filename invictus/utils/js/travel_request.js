@@ -8,11 +8,18 @@ frappe.ui.form.on("Travel Request", {
             }
         });
     },
-    sponsored_amount:function(frm){
-        frm.set_value('total_amount',frm.sponsored_amount+frm.funded_amount)
+
+});
+
+frappe.ui.form.on("Travel Request Costing", {
+    sponsored_amount:function(frm,cdt,cdn){ 
+        let row = locals[cdt][cdn] 
+
+        frappe.model.set_value(cdt,cdn,'total_amount',row.sponsored_amount+row.funded_amount)
     },
-    funded_amount:function(frm){
-        frm.set_value('total_amount',frm.sponsored_amount+frm.funded_amount)
+    funded_amount:function(frm,cdt,cdn){
+        let row = locals[cdt][cdn] 
+        frappe.model.set_value(cdt,cdn,'total_amount',row.sponsored_amount+row.funded_amount)
 
     }
 
