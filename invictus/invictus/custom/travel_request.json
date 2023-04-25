@@ -1153,7 +1153,7 @@
    "columns": 0,
    "creation": "2023-04-21 17:32:26.890257",
    "default": null,
-   "depends_on": "eval:!doc.__islocal",
+   "depends_on": "eval:doc.docstatus==1 || doc.docstatus==2",
    "description": null,
    "docstatus": 0,
    "dt": "Travel Request",

@@ -18,13 +18,14 @@ def costing_details(self,event):
 
 def send_emails(self,events):
     if self.employee_code_approver:
-        if self.docstatus=='0':
+        if self.docstatus==0:
             subject = ("Travel Request")
             message = (f"Employee ID: {self.employee}<br> Travel Request: <a href='/app/travel-request/{self.name}'>{self.name}</a><br> Territory : {self.territory}")
             recipients=frappe.get_doc("Employee",self.employee_code_approver)
             frappe.sendmail(
                 recipients=[recipients.user_id], subject=subject, message=message
             )
+def send_email_after_submit(self,event):
         if self.travel_request_status=='Objected':
             subject = ("Travel Request Objected")
             message = (f"Travel Request: <a href='/app/travel-request/{self.name}'>{self.name}</a><br> Travel Requested was Objected by {self.employee_code_approver}")

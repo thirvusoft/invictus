@@ -106,7 +106,8 @@ after_install = "invictus.install.after_install"
 doc_events = {
 	"Travel Request": {
 		"on_update_after_submit": ["invictus.utils.py.employee_advance.employee_advance",
-                             "invictus.utils.py.travel_request.totals"],
+                             "invictus.utils.py.travel_request.totals",
+                             "invictus.utils.py.travel_request.send_email_after_submit"],
 		"after_insert":"invictus.utils.py.travel_request.costing_details",
 		"validate":["invictus.utils.py.travel_request.send_emails",
               "invictus.utils.py.travel_request.costing_details",
