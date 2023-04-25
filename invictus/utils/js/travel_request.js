@@ -17,3 +17,15 @@ frappe.ui.form.on("Travel Request", {
     }
 
 });
+
+frappe.ui.form.on("Travel Request Costing", {
+    sponsored_amount:function(frm,cdt,cdn){  
+        console.log(frm.doc.sponsored_amount+frm.doc.funded_amount)      
+        frappe.model.set_value(cdt,cdn,'total_amount',frm.doc.sponsored_amount+frm.doc.funded_amount)
+    },
+    funded_amount:function(frm,cdt,cdn){
+        frappe.model.set_value(cdt,cdn,'total_amount',frm.doc.sponsored_amount+frm.doc.funded_amount)
+
+    }
+
+});
