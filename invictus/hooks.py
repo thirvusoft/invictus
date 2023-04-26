@@ -126,7 +126,11 @@ doc_events = {
 		"validate":["invictus.utils.py.user_permission.user_permission",
               "invictus.utils.py.user_permission.user_permission_employee"]
 
-	}
+	},
+   "Expense Claim":{
+	   "validate":["invictus.utils.py.expnese_claim.expense_cycle",
+                "invictus.utils.py.expnese_claim.expense_validation"]
+   }
 }
 
 # Scheduled Tasks

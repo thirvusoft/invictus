@@ -13,17 +13,11 @@ class CDBudgetAllocation(Document):
             frappe.throw(msg = _(f'{"From Date" if not self.from_date else "To Date"} is Missing.'), title = _('Value Missing'))
 
     def validate(self):
-        fromdate=frappe.get_all('CD Budget Allocation',filters={'from_date':['>=',self.from_date],'name':['!=',self.name]},pluck='name')
-        todate=frappe.get_all('CD Budget Allocation',filters={'to_date':['<=',self.to_date],'name':['!=',self.name]},pluck='name')
-        frappe.errprint(fromdate)
-        frappe.errprint(todate)
-        
+        fromdate=frappe.get_all('CD Budget Allocation',filters={'from_date':['<=',self.from_date],'name':['!=',self.name]},pluck='name')
+        todate=frappe.get_all('CD Budget Allocation',filters={'to_date':['>=',self.to_date],'name':['!=',self.name],'docstatus':['!=',2]},pluck='name')
         common_dates=[]
         for i in todate:
-            frappe.errprint(i)
             if i in fromdate:
-                frappe.errprint(i)
-
                 common_dates.append(i)
         if common_dates:
             frappe.throw(f"From Date and To Date is Overlapped with {', '.join(common_dates)}")

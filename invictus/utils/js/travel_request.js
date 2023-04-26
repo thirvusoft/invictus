@@ -7,6 +7,7 @@ frappe.ui.form.on("Travel Request", {
                 }
             }
         });
+        cur_frm.email_field = cur_frm.doc.contact_email == frappe.session.user ? "prefered_email":"contact_email"
     },
 
 });

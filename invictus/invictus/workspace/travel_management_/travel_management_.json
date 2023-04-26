@@ -1,18 +1,19 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Travel Management -Level 1</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Travel Request\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"CD Budget Allocation\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mode of Transport\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Invictus Settings\",\"col\":3}}]",
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Travel Management</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Travel Request\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"CD Budget Allocation\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mode of Transport\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Invictus Settings\",\"col\":3}}]",
  "creation": "2023-04-12 09:49:21.010047",
  "docstatus": 0,
  "doctype": "Workspace",
  "for_user": "",
  "hide_custom": 0,
+ "icon": "",
  "idx": 0,
- "label": "Travel Management -Level 1",
+ "label": "Travel Management ",
  "links": [],
- "modified": "2023-04-12 10:07:13.449223",
+ "modified": "2023-04-26 10:07:28.354342",
  "modified_by": "Administrator",
  "module": "Invictus",
- "name": "Travel Management -Level 1",
+ "name": "Travel Management ",
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
@@ -53,5 +54,5 @@
    "type": "DocType"
   }
  ],
- "title": "Travel Management -Level 1"
+ "title": "Travel Management "
 }
