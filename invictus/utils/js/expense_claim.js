@@ -1,5 +1,5 @@
 frappe.ui.form.on("Expense Claim", {
-	onload: function(frm) {
+	refresh: function(frm) {
 			if (frm.doc.docstatus == 0) {
 				frm.add_custom_button(__('Travel Request'), function () {
 					if (!frm.doc.employee) {
