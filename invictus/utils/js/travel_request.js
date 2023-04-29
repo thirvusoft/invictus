@@ -1,5 +1,5 @@
 frappe.ui.form.on("Travel Request", {
-    onload: function (frm) {
+    onload: async function (frm) {
         frm.set_query('mode_of_transport', function () {
             return {
                 filters: {
@@ -8,7 +8,13 @@ frappe.ui.form.on("Travel Request", {
             }
         });
         cur_frm.email_field = cur_frm.doc.contact_email == frappe.session.user ? "prefered_email":"contact_email"
-    },
+        let emp= await frappe.db.get_value("Employee",{user_id:frappe.session.user},'name')
+        if (cur_frm.is_new()){
+            cur_frm.set_value('employee',emp.message.name)
+        }
+    }
+
+
 
 });
 

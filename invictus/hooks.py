@@ -123,8 +123,8 @@ doc_events = {
 
 	},
   	"Employee":{
-		"validate":["invictus.utils.py.user_permission.user_permission",
-              "invictus.utils.py.user_permission.user_permission_employee"]
+		"validate":["invictus.utils.py.user_permission.user_permission"],
+  
 
 	},
    "Expense Claim":{

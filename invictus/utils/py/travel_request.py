@@ -89,5 +89,3 @@ def eligibal_amount(self,event):
     self.total_eligible_amount =eligible
 
     
-            
-

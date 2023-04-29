@@ -1,6 +1,7 @@
 import frappe
 
 def employee_advance(self,event):
+    advance_account=frappe.get_value("Company",self.company,'default_employee_advance_account')
     for i in self.travel_request_advance:
         if i.amount and not i.advance:
             
@@ -10,7 +11,7 @@ def employee_advance(self,event):
                 "travel_request":self.name,
                 "purpose":self.purpose_of_travel,
                 "advance_amount":i.amount,
-                "advance_account":frappe.db.get_single_value('Invictus Settings','advance_account'),
+                "advance_account":advance_account,
                 'exchange_rate':0
             })
             new_employee_advance.save()
