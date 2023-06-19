@@ -1,0 +1,54 @@
+{
+ "charts": [],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Travel Management</span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Travel Request\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"CD Budget Allocation\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Mode of Transport\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee\",\"col\":3}}]",
+ "creation": "2023-04-29 11:00:58.640126",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "folder-normal-large",
+ "idx": 0,
+ "label": "Travel Management",
+ "links": [],
+ "modified": "2023-05-03 09:52:17.029223",
+ "modified_by": "Administrator",
+ "module": "Invictus",
+ "name": "Travel Management",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 60.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Travel Request",
+   "link_to": "Travel Request",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Employee",
+   "link_to": "Employee",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Mode of Transport",
+   "link_to": "Mode of Transport",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "CD Budget Allocation",
+   "link_to": "CD Budget Allocation",
+   "type": "DocType"
+  }
+ ],
+ "title": "Travel Management"
+}
